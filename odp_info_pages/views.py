@@ -17,6 +17,12 @@ def format_mem(m: int):
     m = f'{m*1000:.2f}'
     return f'{m} {suffix[index-1]}'
 
+class FrontPage(View):
+    template_name = 'base.html'
+
+    def get(self, request):
+        return render(request, '404.html',{})
+
 
 class BasicJSONView(View):
     

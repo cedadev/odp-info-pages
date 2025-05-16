@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from .views import BasicJSONView, BasicHTMLView
+from .views import BasicJSONView, BasicHTMLView, FrontPage
 
 urlpatterns = [
+    path('', FrontPage.as_view()),
     path('admin/', admin.site.urls),
     path('uuid/<str:uuid>/',BasicHTMLView.as_view()),
     path('uuid_json/<str:uuid>/', BasicJSONView.as_view(), name='view_uuid')
