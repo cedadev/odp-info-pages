@@ -1,5 +1,5 @@
 [project]
-name = "odp-info-pages"
+name = "info-site"
 version = "0.1.0"
 description = "Open Data Portal Info Pages - Frontend ESA-branded info page for displaying collated Moles and Opensearch metadata."
 authors = [
@@ -13,6 +13,10 @@ dependencies = [
     "elasticsearch (>=8,<9)",
     "xmltodict (>=0.14.2,<0.15.0)",
     "requests (>=2.32.3,<3.0.0)"
+]
+packages = [
+    { include = 'pages' },
+    { include = 'static' }
 ]
 
 [build-system]
