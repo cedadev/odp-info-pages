@@ -1,0 +1,19 @@
+[project]
+name = "odp-info-pages"
+version = "0.1.0"
+description = "Open Data Portal Info Pages - Frontend ESA-branded info page for displaying collated Moles and Opensearch metadata."
+authors = [
+    {name = "Daniel Westwood",email = "daniel.westwood@stfc.ac.uk"}
+]
+license = {text = "BSD 3"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "django (>=5.2.1,<6.0.0)",
+    "elasticsearch (>=8,<9)",
+    "xmltodict (>=0.14.2,<0.15.0)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,95 @@
+{
+    "ob_id": 26433,
+    "uuid": "3628cb2fdba443588155e15dee8e5352",
+    "title": "ESA Fire Climate Change Initiative (Fire_cci): MODIS Fire_cci Burned Area Grid product, version 5.1",
+    "abstract": "The ESA Fire Disturbance Climate Change Initiative (CCI) project has produced maps of global burned area derived from satellite observations. The MODIS Fire_cci v5.1 grid product described here contains gridded data on global burned area derived from the MODIS instrument onboard the TERRA satellite at 250m resolution for the period 2001 to 2019.  This product supercedes the previously available MODIS v5.0 product. The v5.1 dataset was initially published for 2001-2017, and has later been periodically extended to include 2018 to 2022. \r\n\r\nThis gridded dataset has been derived from the MODIS Fire_cci v5.1 pixel product (also available) by summarising its burned area information into a regular grid covering the Earth at 0.25 x 0.25 degrees resolution and at monthly temporal resolution.   Information on burned area is included in 23 individual quantities: sum of burned area, standard error, fraction of burnable area, fraction of observed area, number of patches and the burned area for 18 land cover classes, as defined by the Land_Cover_cci v2.0.7  product. For further information on the product and its format see the Fire_cci product user guide in the linked documentation.",
+    "keywords": "ESA, CCI, GRID, Burned Area, Fire Disturbance, Climate Change, GCOS Essential Climate Variable",
+    "publicationState": "citable",
+    "dataPublishedTime": "2019-02-08T14:49:28",
+    "doiPublishedTime": "2019-02-08T14:51:49",
+    "updateFrequency": "unknown",
+    "status": "completed",
+    "result_field": {
+        "ob_id": "https://catalogue.ceda.ac.uk/api/v2/observations/26985.json",
+        "dataPath": "/neodc/esacci/fire/data/burned_area/MODIS/grid/v5.1/",
+        "oldDataPath": [],
+        "storageLocation": "internal",
+        "storageStatus": "online",
+        "volume": 23711229222,
+        "numberOfFiles": 294,
+        "fileFormat": "Data are in NetCDF format"
+    },
+    "timePeriod": "https://catalogue.ceda.ac.uk/api/v2/times/8231.json",
+    "geographicExtent": "https://catalogue.ceda.ac.uk/api/v2/bboxes/529.json",
+    "nonGeographicFlag": False,
+    "phenomena": [
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/1050.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/6021.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/6022.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/6023.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/6337.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/6338.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/11747.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/18512.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/18514.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/18515.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/18516.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/18517.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/22894.json",
+        "https://catalogue.ceda.ac.uk/api/v2/phenomona/22895.json"
+    ],
+    "dataLineage": "Data was produced by the ESA Fire_CCI team as part of ESA's Climate Change Initiative (CCI) and is being held on the CEDA (Centre for Environmental Data Analysis) archive as part of the ESA CCI Open Data Portal Project.",
+    "removedDataTime": None,
+    "removedDataReason": "",
+    "language": "English",
+    "identifier_set": [
+        "https: //catalogue.ceda.ac.uk/api/v2/identifiers/10216.json",
+        "https://catalogue.ceda.ac.uk/api/v2/identifiers/10221.json"
+    ],
+    "projects": [
+        "https://catalogue.ceda.ac.uk/api/v2/projects/13255.json"
+    ],
+    "observationcollection_set": [
+        "https://catalogue.ceda.ac.uk/api/v2/observationcollections/12683.json"
+    ],
+    "responsiblepartyinfo_set": [
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110881.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110882.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110883.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110885.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110910.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110908.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/140427.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110884.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110909.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110886.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110887.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110899.json",
+        "https://catalogue.ceda.ac.uk/api/v2/rpis/110891.json"
+    ],
+    "procedureAcquisition": None,
+    "procedureCompositeProcess": "https://catalogue.ceda.ac.uk/api/v2/composites/25857.json",
+    "procedureComputation": None,
+    "permissions": [
+        {
+            "ob_id": "https://catalogue.ceda.ac.uk/api/v2/observations/2388.json",
+            "useLimitation": None,
+            "accessConstraints": None,
+            "accessCategory": "Public",
+            "accessRoles": None,
+            "label": "Public: None group",
+            "licenceURL": "https://artefacts.ceda.ac.uk/licences/specific_licences/esacci_fire_terms_and_conditions.pdf",
+            "licenceClassifications": "any"
+        }
+    ],
+    "discoveryKeywords": [
+        {
+            "ob_id": 1138,
+            "name": "NDGO0003"
+        },
+        {
+            "ob_id": 1140,
+            "name": "ESACCI"
+        }
+    ]
+}

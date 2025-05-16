@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'ccike.css' %}">
+<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" >
+<html class="no-js" lang="en" data-addthis-enabled="true" data-is-preview="" data-matomo-enabled="true"
+    data-matomo-url="https://matomo-ext.esa.int/" data-matomo-site-id="4">
+<!-- 4.13.5-35 -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        The ESA Climate Change Initiative Open Data portal
+    </title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:site_name" content="ESA Climate Office" />
+    <meta property="og:type" content="website" />
+
+
+    <meta property="og:url" content="https://climate.esa.int/en/data/" />
+    <meta property="og:title" content="Data" />
+    <meta property="og:description"
+        content="The Open Data Portal hosts the suite of Essential Climate Variable datasets produced under the Climate Change Initiative (CCI) programme as a single point of access." />
+
+    <meta property="og:image"
+        content="https://climate.esa.int/media/images/ESA-CCI-overview_.2e16d0ba.fill-600x314-c100.format-jpeg_4QfuVRY.jpg" />
+
+
+
+
+
+
+    <meta itemprop='url' content='https://climate.esa.int/en/data/' />
+    <meta itemprop="name" content="Data">
+    <meta itemprop='description'
+        content='The Open Data Portal hosts the suite of Essential Climate Variable datasets produced under the Climate Change Initiative (CCI) programme as a single point of access.' />
+
+    <meta itemprop='image'
+        content='https://climate.esa.int/media/images/ESA-CCI-overview_.2e16d0ba.fill-600x314-c100.format-jpeg_4QfuVRY.jpg' />
+    <title>Data</title>
+    <meta name="description"
+        content="The Open Data Portal hosts the suite of Essential Climate Variable datasets produced under the Climate Change Initiative (CCI) programme as a single point of access.">
+    <link href="https://climate.esa.int/static/dist/ccikewebsite-common-79f3815153cd89cb213e.css" rel="stylesheet" />
+    <script src="https://climate.esa.int/static/dist/ccikewebsite-common-2887930f8a054eedd376.bundle.js"></script>
+    <link href="https://climate.esa.int/static/dist/ccikewebsite-odpnav-8fd2a2b50f7e382bf820.css" rel="stylesheet" />
+    <script src="https://climate.esa.int/static/dist/ccikewebsite-odpnav-7a4ce9feb2a25219885f.bundle.js"></script>
+    <script src="https://climate.esa.int/static/dist/ccikewebsite-infopage-79e80e9343de4bab3358.bundle.js"></script>
+</head>
+
+<body class="">
+
+    <!-----------------------------------------------------------
+    -- ESA Header module v2
+    -- Date: 23-10-2020
+    ------------------------------------------------------------>
+    <section id="esa-header" class="esa-header">
+
+        <div class="esa-header__left">
+
+            <button id="esa-menu" class="esa-header__toggle">
+                <img class="esa-header__icon" src="https://climate.esa.int/static/img/ESA_Menu.c0a24aa9305e.svg"
+                    alt="ESA menu toggle">
+            </button>
+
+            <button id="esa-search" class="esa-header__toggle">
+                <img class="esa-header__icon" src="https://climate.esa.int/static/img/ESA_Search.8cd3b02e8d79.svg"
+                    alt="ESA search toggle">
+            </button>
+
+            <!-- <button id="esa-login" class="esa-header__toggle">
+                <img class="esa-header__icon" src="https://climate.esa.int/static/img/ESA_Login.55a1019d2a2d.svg" alt="ESA login toggle">
+            </button> -->
+
+
+
+            <button id="esa-language" class="esa-header__toggle">
+                <img class="esa-header__icon" src="https://climate.esa.int/static/img/ESA_Language.ff38a8b86fbb.svg"
+                    alt="ESA language toggle">
+            </button>
+
+
+            <img class="esa-header__title" src="https://climate.esa.int/static/img/ESA_climate_Title.09e71bbe35b0.svg"
+                alt="ESA title">
+
+        </div>
+
+        <div class="esa-header__right">
+
+            <a class="esa-header__link" href="https://www.esa.int">
+                <img class="esa-header__logo" src="https://climate.esa.int/static/img/ESA_Logo.ade2b43e550d.svg"
+                    alt="ESA logo">
+            </a>
+
+        </div>
+
+    </section>
+    <!-- End of module ----------------------------------------->
+
+
+    <form class="quick-search" action="/en/search">
+        <input id="quicksearch-i" class="quick-search__field" type="text" name="q" placeholder="Search ESA Climate">
+
+        <button class="quick-search__submit" type="submit"><i class="fas fa-arrow-right"></i></button>
+    </form>
+
+
+    <form class="quick-lang">
+        <a href="/en/data/">English</a>
+        <a href="/fr/data/">French</a>
+        <a href="/de/data/">German</a>
+        <a href="/nl/data/">Dutch</a>
+        <a href="/es/data/">Spanish</a>
+    </form>
+
+    <section id="overlay-menu">
+        <div id="overlay-menu-wrapper">
+            <!-- Left section -->
+            <div id="sidebar">
+
+                <button class="close-menu"><i class="fas fa-times"></i></button>
+                <div id="sidebar-nav">
+
+                    <a class="menu-item menu-item--home " href="/en/"><i class="fas fa-home"></i>CCI Home</a>
+
+
+
+
+
+
+
+
+
+
+                    <a class="menu-item " href="/en/about-us-new/climate-change-initiative/">Climate Change
+                        Initiative</a>
+
+                    <a class="menu-item " href="/en/news-events/">News</a>
+
+                    <a class="menu-item " href="/en/Scientific-highlights/">Highlights</a>
+
+                    <a class="menu-item " href="/en/projects/">ECV Projects</a>
+
+                    <a class="menu-item " href="/en/Cross_ECV_Projects/">Cross-ECV Projects</a>
+
+                    <a class="menu-item " href="/en/supporting-the-paris-agreement/">Paris Agreement Support</a>
+
+                    <a class="menu-item " href="/en/tipping-points-research/">Tipping Elements Projects</a>
+
+                    <a class="menu-item active" href="/en/data/">Data</a>
+
+                    <a class="menu-item " href="/en/education/">Training</a>
+
+                    <a class="menu-item " href="/en/about-us-new/">About Us</a>
+
+                    <a class="menu-item " href="https://cfs.climate.esa.int">Explore</a>
+
+                    <a class="menu-item " href="/en/about-us-new/climate-change-initiative/procurement/">Procurement</a>
+
+                    <a class="menu-item " href="/en/contact-us/">Contact us</a>
+
+
+
+
+
+                </div>
+                <div class="social-media-links">
+                    <a href="https://www.youtube.com/user/ESA" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://twitter.com/esa" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/EuropeanSpaceAgency" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/europeanspaceagency/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- /Left section -->
+            <!-- Left section -->
+            <div id="menu-content">
+
+            </div>
+            <!-- Content -->
+        </div>
+
+        /en/
+
+    </section>
+
+    <!-- HEADER NAVIGATION -->
+
+    <main role="main" id="main-standard">
+        <div style="margin-right: 10px;">
+
+
+
+
+        <link href="https://climate.esa.int/static/dist/ccikewebsite-odpnav-8fd2a2b50f7e382bf820.css"
+            rel="stylesheet" />
+
+
+
+        <script src="https://climate.esa.int/static/dist/ccikewebsite-odpnav-7a4ce9feb2a25219885f.bundle.js"></script>
+        <script src="https://climate.esa.int/static/dist/ccikewebsite-infopage-79e80e9343de4bab3358.bundle.js"></script>
+
+        <div class="tab-content" id="nav-tabContent">
+
+
+            <div id="search-feature-div" class="search-feature-div">
+                <div style="text-align: left;">
+                    <div>
+                        <div>
+                            <label class="search-feature-ecv NotesEsa-Transform ccike-atmospheric" style="vertical-align: center; font-family: CCIThick">{{ ecv }}</label>
+                            <span class="NotesEsa-H4" style="font-family: CCIThick;">
+                                Oops...
+                            </span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Info Text -->
+        <div>
+            <div class="ccike-project-info-options">
+                <span style="font-family: CCIPlain;">
+                    <span>It appears the UUID you have requested could not be resolved.</span>
+                </span>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <script src="https://climate.esa.int/odpui/vue/dist/js/app.0406a89390137946aa89.js"></script>
+
+    <link href="https://climate.esa.int/static/dist/ccikewebsite-lowprio-e25d496b1cca8855a8b3.css"
+        rel="stylesheet" />
+    <script
+        src="https://climate.esa.int/static/dist/ccikewebsite-lowprio-7062e4d4018f47bd9cf9.bundle.js"></script>
+</body>
+
+<footer id="footer">
+    <span class="footer__signature">European Space Agency</span>
+    <div class="social-media-links" style="float: right;">
+        <a href="https://www.youtube.com/user/ESA" target="_blank">
+            <svg class="svg-inline--fa fa-youtube" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="#49A191" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg><!-- <i class="fab fa-youtube"></i> Font Awesome fontawesome.com -->
+        </a>
+        <a href="https://twitter.com/esaclimate" target="_blank">
+            <svg class="svg-inline--fa fa-twitter" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="#49A191" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg><!-- <i class="fab fa-twitter"></i> Font Awesome fontawesome.com -->
+        </a>
+        <a href="https://www.facebook.com/EuropeanSpaceAgency" target="_blank">
+            <svg class="svg-inline--fa fa-facebook-f" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="#49A191" d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"></path></svg><!-- <i class="fab fa-facebook-f"></i> Font Awesome fontawesome.com -->
+        </a>
+        <a href="https://www.instagram.com/europeanspaceagency" target="_blank">
+            <svg class="svg-inline--fa fa-instagram" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="#49A191" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg><!-- <i class="fab fa-instagram"></i> Font Awesome fontawesome.com -->
+        </a>
+    </div>
+</footer>
+
+</html>

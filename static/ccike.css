@@ -1,0 +1,1237 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+@font-face {
+    font-family: CCIThick;
+    src: url("http://127.0.0.1:8000/static/fonts/thick.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: CCIPlain;
+    src: url("http://127.0.0.1:8000/static/fonts/plain.ttf") format("truetype");
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: #000000;
+}
+
+
+
+#app .ml-1 {
+  margin-left: 0.25rem !important;
+}
+
+#app .ml-2 {
+  margin-left: 0.5rem !important;
+}
+
+#app .pr-2 {
+  padding-right: 0.5rem !important;
+}
+
+.v-centre {
+  margin: auto 0;
+}
+
+.h-centre {
+  margin: 0 auto;
+}
+
+.ado-break-word {
+  word-break: break-all;
+}
+
+@media only screen and (max-width: 820px) {
+  #app {
+    display: flex;
+  }
+
+  #app #dashboard-content.dashboard-content-standalone {
+    padding: 0 !important;
+  }
+
+  #app #search-content.search-rectangle,
+  #app .search-feature-container,
+  #app #dashboard-search-content.search-rectangle,
+  #app .dashboard-search-element,
+  #app #dashboard-content {
+    padding: 0 0.75rem 0 0.75rem !important;
+  }
+
+  #app .hr-bottom {
+    height: 140px !important;
+  }
+
+  #ccike-timeline-visualization,
+  #ccike-search-facet-buttons {
+    min-width: 335px;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding-bottom: 30px;
+  }
+
+  #dashboard .vis-panel.vis-center,
+  #dashboard .vis-panel.vis-left,
+  #dashboard .vis-panel.vis-right,
+  #dashboard .vis-panel.vis-bottom,
+  #dashboard .vis-timeline {
+    touch-action: pan-x pan-y !important;
+  }
+
+  #dashboard .vis-item-content {
+    visibility: visible !important;
+  }
+
+  #dashboard .vis-timeline {
+    width: 1200px;
+  }
+  
+  #app .dashboard-search-input-width {
+    width: 80% !important;
+  }
+
+  .ccike-flex-wrap {
+    flex-wrap: unset !important;
+  }
+
+  #ccike-timeline-visualization {
+    width: 100%;
+  }
+
+  #dashboard-search-button button,
+  #search-search-button button {
+    width: unset !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #ccike-search-facet-buttons .dropdown-menu.show {
+    max-width: 350px;
+  }
+
+  #ccike-search-facet-buttons:has(.dropdown-menu.show) {
+    padding-bottom: 300px;
+  }
+
+  #search-content .ccike-searchterm-input,
+  #dashboard-search-content .ccike-searchterm-input {
+    border-width: 4px 4px 4px 0px !important;
+    font-size: 1.8rem !important;
+  }
+  
+  #app .search-results-count-container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: left !important;
+    align-items: left !important;
+    padding: 0px !important;
+    gap: 15px !important;
+  }
+
+  #app .ccike-dataset-info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 30px 0px 0px 0px !important;
+  }
+  
+  #app .hv-borders {
+    border-right: 2px solid #3f6c7d !important;
+    border-left: 2px solid #3f6c7d !important;
+    border-top: unset! important;
+    border-bottom: unset !important;
+  }
+
+  .ccike-project-info-options {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column !important;
+    align-items: flex-start;
+    padding: 0px;
+  }
+
+  #search-content .input-group {
+    justify-content: center !important;
+  }
+  
+  #app .dashboard-search-element {
+    width: 100% !important;
+  }
+
+  #app .ccike-dataset-info-item {
+    width: 100%;
+  }
+
+  #app .vis-item-overflow {
+    overflow: unset;
+  }
+
+  .NotesEsa-Copy_Large {
+    word-break: break-word;
+  }
+
+  .NotesEsa-H2 {
+    font-weight: 700 !important;
+    font-size: 3rem !important;
+  }
+
+  .NotesEsa-H4 {
+    font-size: 2.4rem !important;
+  }
+
+  .NotesEsa-Copy_Large {
+    font-size: 1.6rem !important;
+  }
+
+  #dashboard .ccike-group-project-label,
+  .ccike-group-label {
+    font-size: 1.6rem !important;
+  }
+
+  .vis-time-axis .vis-text {
+    font-size: 1.6rem !important;
+  }
+
+  #app .vis-time-axis.vis-foreground {
+    left: -1.8rem !important;
+  }
+  
+  #feature-file-collections .aggregation-padding {
+    flex-direction: column;
+    align-items: start;
+  }
+
+}
+
+#app .ccike-group-project-content {
+  height: 40px !important;
+}
+
+#app .vis-item .vis-item-overflow {
+  overflow: unset;
+}
+
+#app .vis-time-axis.vis-foreground {
+  background: #000000;
+  left: -2.3rem;
+}
+
+#app ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 0px;
+  height: 6px;
+ }
+
+#app ::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  touch-action: pan-x;
+  -ms-touch-action: pan-x;
+}
+
+#app .input-group-prepend .fa-lg {
+  font-size: 2.4rem;
+}
+
+#app .m-magnify {
+  margin: 0 1.2rem;
+}
+
+.ccike-standard-font {
+  font-size: 1.2rem;
+}
+
+.ccike-icon-style {
+  min-width: 1.4rem;
+  text-align: center;
+}
+
+.bg-image-banner-opaque {
+  z-index: -2000;
+  content: ' ';
+  top: -100px;
+}
+
+.bg-image-banner-opaque::before {
+  content: ' ';
+  top: -100px;
+  background-image: linear-gradient(90deg, rgba(000,174,157, 0.9) 0%, rgba(000,174,157, 0) 50%), url('~@/assets/images/default-background.jpg');
+  opacity: 0.80;
+  width: 100%;
+  height: 120%;
+  display: block;
+  position: fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.ccike-app-header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgb(65, 64, 66, 1);
+  color: white;
+}
+
+.ccike-app-header-info {
+  padding-top: 1rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+.ccike-app-header-title {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+#dashboard-search-content,
+#search-content {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #000000;
+}
+
+#dashboard-search-content,
+#search-content {
+  width: 100%;
+}
+
+#search-content .row {
+  padding: 20px 0 0 0;
+  width: 85%;
+  margin: 0 auto;
+}
+
+#dashboard-search-content .row{
+  padding: 250px 0 0 0;
+}
+
+#project-content-container {
+  margin: 8rem;
+  font-size: 1.2rem;
+}
+
+#ccike-search-facet-buttons-block {
+  padding: 1rem 0px 0px 0px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1250px;
+  padding-top: 1rem;
+}
+
+#search-content .row,
+#app .search-feature-container,
+#app #dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 50px 0 0 0;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1250px;
+}
+
+#search-content .row {
+  background-color: transparent;
+}
+
+#app .search-feature-container,
+#app #dashboard-content {
+  background-color: #000000;
+}
+
+#project-content {
+  padding: 2rem 2rem 0px 2rem;
+  font-size: 1.2rem;
+}
+
+#project-content {
+  background-color: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(10px);
+}
+
+#ccike-search,
+#ccike-dashboard,
+#ccike-project {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.ccike-modal-content {
+  text-align: center;
+  max-width: 100%;
+}
+
+.ccike-banner-project-overlay {
+  left: 40%;
+}
+
+.ccike-banner-dashboard-overlay {
+  left: 1%;
+  width: 36%;
+}
+
+.dashboard-overlay-border {
+  border: 5px solid white;
+  width: 20%;
+  left: 58%;
+}
+
+.ccike-banner-searchui-overlay {
+  left: 1%;
+  width: 38%;
+}
+
+.searchui-overlay-border {
+  border: 5px solid white;
+  width: 20%;
+  left: 58%;
+}
+
+.ccike-banner-overlay {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ccike-banner {
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.ccike-background-black {
+  background-color: black !important;
+}
+
+.ccike-background-blue {
+  background-color: blue !important;
+}
+
+.ccike-c3s {
+  stroke: rgb(245, 241, 9);
+  background-color: rgba(245, 241, 9, 0.9);
+  margin-top: 5px;
+}
+
+.ccike-project-date {
+  stroke: rgba(0, 51, 73, 1);
+  background-color: rgba(0, 51, 73, 0.9);
+}
+
+.ccike-project-timeline-background {
+  stroke: rgb(63, 108, 125, 1);
+  background-color: rgba(63, 108, 125, 0.9);
+}
+
+.ccike-oceanic {
+  stroke: rgba(0, 179, 152, 1);
+  background-color: rgba(0, 179, 152, 0.9);
+}
+
+.ccike-terrestrial {
+  stroke: rgba(0, 125, 138, 1);
+  background-color: rgba(0, 125, 138, 0.9);
+}
+
+.ccike-atmospheric {
+  stroke: rgba(118,200,174, 1);
+  background-color: rgba(118,200,174, 0.9);
+}
+
+.ccike-team-oceanic {
+  stroke: rgba(21, 133, 141, 1);
+  background-color: rgba(21, 133, 141, 0.9);
+}
+
+.ccike-greenhouse-gases {
+  stroke: rgba(85, 186, 235, 1);
+  background-color: rgba(85, 186, 235, 0.5);
+}
+
+.ccike-cloud {
+  stroke: rgba(10, 152, 221, 1);
+  background-color: rgba(10, 152, 221, 0.5);
+}
+
+.ccike-ocean-colour {
+  stroke: rgba(0, 138, 79, 1);
+  background-color: rgba(0, 138, 79, 0.5);
+}
+
+.ccike-greenland-ice-sheet {
+  stroke: rgba(241, 178, 69, 1);
+  background-color: rgba(249, 168, 28, 0.5);
+}
+
+.ccike-ozone {
+  stroke: rgba(130, 205, 241, 1);
+  background-color: rgba(130, 205, 241, 0.5);
+}
+
+.ccike-fire {
+  stroke: rgba(221, 132, 20, 1);
+  background-color: rgba(221, 132, 20, 0.5);
+}
+
+.ccike-sea-surface-temperature {
+  stroke: rgba(77, 198, 146, 1);
+  background-color: rgba(77, 198, 146, 0.5);
+}
+
+.ccike-soil-moisture {
+  stroke: rgba(255, 197, 111, 1);
+  background-color: rgba(255, 197, 111, 0.5);
+}
+
+.ccike-sea-ice {
+  stroke: rgba(0, 178, 102, 1);
+  background-color: rgba(0, 178, 102, 0.5);
+}
+
+.ccike-aerosol {
+  stroke: rgba(4, 120, 176, 1);
+   background-color: rgba(4, 120, 176, 0.5);
+}
+
+.ccike-antarctic-ice-sheet {
+  stroke: rgba(240, 160, 24, 1);
+  background-color: rgba(240, 160, 24, 0.5);
+}
+
+.ccike-glaciers {
+  stroke: rgba(255, 204, 128, 1);
+  background-color: rgba(255, 204, 128, 0.5);
+}
+
+.ccike-land-cover {
+  stroke: rgba(251, 178, 69, 1);
+  background-color: rgba(251, 178, 69, 0.5);
+}
+
+.ccike-permafrost {
+  stroke: rgba(255, 224, 179, 1);
+  background-color: rgba(255, 224, 179, 0.5);
+}
+
+.ccike-biomass {
+  stroke: rgba(255, 214, 153, 1);
+  background-color: rgba(255, 214, 153, 0.5);
+}
+
+.ccike-snow {
+  stroke: rgba(255, 234, 204, 1);
+  background-color: rgba(255, 234, 204, 0.5);
+}
+
+.ccike-lakes {
+  stroke: rgba(255, 234, 204, 1);
+  background-color: rgba(255, 224, 204, 0.5);
+}
+
+.ccike-sea-level {
+  stroke: rgba(41, 183, 122, 1);
+  background-color: rgba(41, 183, 122, 0.5);
+}
+
+.ccike-sea-state {
+  stroke: rgba(157, 225, 196, 1);
+  background-color: rgba(157, 225, 196, 0.5);
+}
+
+.ccike-sea-surface-salinity {
+  stroke: rgba(118, 213, 172, 1);
+  background-color: rgba(118, 213, 172, 0.5);
+}
+
+.vis-timeline {
+  border: none;
+}
+
+#search .vis-timeline {
+  margin-top: 0;
+}
+
+.vis-panel.vis-center,
+.vis-panel.vis-bottom {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+
+.vis-time-axis .vis-text {
+  text-align: left;
+  font-weight: bold;
+  color: white;
+}
+
+.vis-label {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+}
+
+.vis-labelset .vis-label,
+.vis-foreground .vis-group {
+  border-bottom: none;
+}
+
+#dashboard .vis-labelset .vis-label,
+#dashboard .vis-time-axis .vis-text {
+  color: #ffffff;
+}
+
+.vis-item.vis-selected {
+  background-color: black;
+}
+
+.ccike-icon-class {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.ccike-banner-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#app .search-search-block,
+#app .dashboard-search-block {
+  width: 100%;
+  background: linear-gradient(to left, #003349 0%, transparent 100%);
+}
+
+#app .dashboard-search-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  width: 75%;
+  margin: 0 auto;
+  max-width: 1250px;
+}
+
+#app #search-content.search-rectangle,
+#app #dashboard-search-content.search-rectangle {
+  background: transparent;
+  top: 0px;
+  height: 85vh;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1250px;
+}
+
+#app #search-content.search-rectangle {
+  height: 60vh;
+}
+
+#app .form-control:focus {
+  box-shadow: unset;
+}
+
+#app .ccike-searchterm-input {
+  box-sizing: border-box;
+
+  height: 64px;
+
+  /* Neutral/White */
+  border-width: 4px 0px 4px 0px;
+  border-color: white;
+  border-style: solid;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  background-color: black;
+
+  /* Font styling */
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.8rem;
+  /* identical to box height, or 100% */
+
+  /* Neutral/White */
+
+  color: #ffffff;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+#app .ccike-search-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 42px;
+  gap: 10px;
+  width: 140px;
+  height: 64px;
+  background: #ffffff;
+  border-radius: 0px 4px 4px 0px !important;
+  border: 3px solid #ffffff;
+  color: black !important;
+}
+
+input.ccike-searchterm-input::-webkit-input-placeholder { /* Edge */
+  color: #ffffff;
+}
+
+input.ccike-searchterm-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #ffffff;
+}
+
+input.ccike-searchterm-input::placeholder {
+  color: #ffffff;
+}
+
+#dashboard .ccike-group-project-label,
+.ccike-group-label {
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 44px;
+  color: #ffffff;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+#dashboard .vis-label:hover{
+  cursor: pointer;
+}
+
+#dashboard .dashboard-hover {
+  background-color: #003349!important;
+}
+
+#dashboard .ccike-group-item:hover {
+  cursor: pointer;
+}
+
+#dashboard .ccike-margin {
+  margin: 10px;
+  text-align: left;
+}
+
+#search .ccike-margin {
+  margin-top: 10px;
+}
+
+.ccike-abstract {
+  font-weight: bold;
+}
+
+#ccike-project-timeline {
+  min-width: 600px;
+  font-size: 1.2rem;
+}
+
+#ccike-timeline {
+  min-width: 600px;
+  font-size: 2.2rem;
+}
+
+#search,
+#dashboard {
+  /* height: 100%; */
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.ccike-project-info-options {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+}
+
+.ccike-project-info-options-links {
+  gap: 24px;
+}
+
+.ccike-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.ccike-flex-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ccike-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.ccike-flex-wrap {
+  flex-wrap: wrap;
+}
+
+#dashboard .ccike-overlay-btn,
+.ccike-project-info,
+.ccike-project-timeline {
+  margin-top: 10px;
+}
+
+.ccike-no-margin-left {
+  margin-left: 0px;
+}
+
+.ccike-no-margin-right {
+  margin-left: 0px;
+}
+
+.ccike-no-margin-top {
+  margin-left: 0px;
+}
+
+.ccike-no-margin-bottom {
+  margin-left: 0px;
+}
+
+.ccike-project-sample-image {
+  display: flex;
+  max-height: 100%;
+}
+
+.ccike-timeline-border {
+  margin-bottom: 50px;
+}
+
+.ccike-align-right {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+}
+
+.ccike-hide {
+  visibility: hidden !important;
+}
+
+.ccike-show {
+  visibility: visible !important;
+}
+
+#ccike-climate-record-btns {
+  float:right;
+}
+
+#ccike-dashboard-advanced-search-button button,
+#ccike-climate-record-btns button,
+#ccike-show-all-dataset-details-button button {
+  background-color: transparent !important;
+}
+
+#app .btn-text-white {
+  color: #ffffff;
+}
+
+#app .btn-text-white:hover {
+  color: #00ae9d;
+}
+
+#ccike-dashboard-advanced-search-button button {
+  padding-top: 30px;
+}
+
+#feature-file-collections button.btn-live-search-site {
+  background-color: #ffffff;
+  text-transform: none;
+  border: unset;
+  border-radius: unset;
+  /* NotesEsa-button */
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 20px;
+  color: #003349;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+#feature-file-collections button.btn-live-search-site:hover {
+  background-color: #ffffff !important;
+  color: #003349 !important;
+}
+
+#feature-file-collections button.dropdown-toggle,
+#feature-file-collections button.btn-primary {
+  background-color: #00B398 !important;
+  border: unset;
+  border-radius: unset;
+  /* NotesEsa-button */
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 20px;
+  color: #FFFFFF !important;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+#feature-file-collections button.btn-primary:hover {
+  background-color: #00B398 !important;
+  color: #FFFFFF !important;
+} 
+
+#feature-file-collections .modal-footer {
+  justify-content: unset;
+}
+
+/* Main site styling start
+*/
+
+h1 {
+  font-family: NotesESACCI,sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.lead-paragraph {
+  font-family: NotesESAregular,sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: 2rem;
+  color: #ffffff;
+}
+
+/* Main site styling end
+*/
+
+.NotesEsa-H2 {
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 6.2rem;
+  color: #FFFFFF;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+
+
+.NotesEsa-H3 {
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4.2rem;
+  color: #ffffff;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.NotesEsa-H4 {
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: #FFFFFF;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.NotesEsa-H5 {
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #003349;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.NotesEsa-H5-ecv {
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #ffffff;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.NotesEsa-H6 {
+  /* H6 */
+
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #ffffff !important;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.NotesEsa-button {
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #ffffff;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.NotesEsa-button-force {
+  color: #ffffff !important;
+}
+
+.NotesEsa-button-black {
+  color: #000000;
+}
+
+.vis-time-axis .vis-text {
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #ffffff;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.NotesEsa-Copy_Medium {
+  font-family: NotesEsaregular, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #003349;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.NotesEsa-Copy_Large {
+  font-family: NotesEsaregular, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #FFFFFF;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.NotesEsa-Transform {
+  font-family: NotesESACCI, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #FFFFFF;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+#app .input-group {
+  flex-wrap: unset;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 4px 0 4px 0;
+}
+
+#dashboard-search-content .input-group {
+  justify-content: center;
+}
+
+#app .search-icon {
+  color: white;
+  width: 32px;
+}
+
+#app .clear-filters-icon {
+  color: #ffffff;
+  width: 32px;
+}
+
+#app .input-group-prepend {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-content: center;
+  border-width: 4px 0px 4px 4px;
+  border-color: white;
+  border-style: solid;
+  border-radius: 4px 0px 0px 4px;
+  background-color: black;
+}
+
+#dashboard-get-data.btn {
+  background-color: #fff;
+  border-radius: 0.5rem !important;
+  color: #284e36;
+  font-family: NotesESACCI,sans-serif;
+  font-size: 2rem;
+  letter-spacing: normal;
+  padding: 16px 42px;
+  text-transform: none;
+}
+
+#ccike-dashboard-advanced-search-button button,
+#ccike-climate-record-btns button,
+#ccike-show-all-dataset-details-button .btn,
+#ccike-c3soverlay-button .btn,
+#ccike-dashboard-data-btn .btn,
+#ccike-dashboard-getdata-btn .btn,
+#ccike-selected-facets .btn,
+#ccike-toggle-details-button .btn,
+#ccike-search-facet-buttons .btn {
+  border: unset;
+  border-radius: unset;
+}
+
+#ccike-climate-record-btns .btn,
+#ccike-show-all-dataset-details-button .btn,
+#ccike-selected-facets .btn,
+#ccike-search-facet-buttons .btn {
+  padding: 0.25rem 0.5rem !important;
+}
+
+#feature-file-collections .btn {
+  padding: 0.375rem 0.75rem;
+}
+
+#app .m-auto {
+  margin: auto !important;
+}
+
+
+#ccike-dashboard-data-btn .btn {
+  padding: unset !important;
+  width: 6rem;
+  height: 3rem;
+  cursor: text;
+}
+
+#ccike-search-facet-buttons .p-2 {
+  padding-left: unset !important;
+  padding-right: 1rem !important;
+}
+
+#ccike-selected-facets {
+  min-width: 335px;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-bottom: 30px;
+}
+
+#app .hr-h50 {
+  height: 50px;
+  margin: 0;
+  border: unset;
+}
+
+#app .hr-h100 {
+  height: 100px;
+  margin: 0;
+  border: unset;
+}
+
+#app .hr-h170 {
+  height: 170px;
+  margin: 0;
+  border: unset;
+}
+
+#app .hr-bottom {
+  height: 180px;
+  margin: 0;
+  border: unset;
+}
+
+/* override the default bootstrap model-open class */
+.modal-open {
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-right: 0 !important;
+}
+
+#app .bg-dark {
+  background-color: #000000 !important;
+}
+
+#feature-file-collections .btn,
+#app .btn {
+  margin-top: 0px !important;
+}
+
+#feature-file-collections .btn:hover,
+#app .btn:hover {
+  transition: none !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+
+#app #ccike-dashboard-down-arrow a {
+  color: #ffffff;
+}
+
+#app #search .dropdown-search-facet:hover,
+#app #ccike-climate-record-btns .btn:hover,
+#app #ccike-show-all-dataset-details-button .btn:hover,
+#app #dashboard-get-data.btn:hover,
+#app #ccike-dashboard-down-arrow a:hover,
+#app #dashboard-search-button .btn:hover,
+#app #search-search-button .btn:hover,
+#ccike-show-all-dataset-details-button .btn:hover,
+#app #ccike-toggle-details-button .btn:hover,
+#app #ccike-dashboard-advanced-search-button .btn:hover {
+  /* background: transparent !important; */
+  color: #00ae9d !important;
+}
+
+#app #ccike-search-facet-buttons .btn:hover {
+  color: #ffffff !important;
+}
+
+#app .dropdown-has-selections .btn:hover {
+  background-color: #3F6C7D !important;
+}
+
+#app .dropdown-no-selections .btn:hover {
+  background-color: #003349 !important;
+}
+
+
+#app .esa-facet-selected-clear-all-button.btn:hover,
+#app .esa-facet-selected-button.btn:hover {
+  background: #3f6c7d !important;
+  color: #ffffff !important;
+}
+
+#app #search-pagination li {
+  margin-left: unset;
+  margin-right: 2rem;
+}
+
+#ado-show-details li,
+#app #ccike-search-facet-buttons li {
+  margin: unset;
+}
