@@ -1,5 +1,5 @@
 """
-ASGI config for odp_info_pages project.
+ASGI config for info_site project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'odp_info_pages.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'info_site.settings')
 
 application = get_asgi_application()

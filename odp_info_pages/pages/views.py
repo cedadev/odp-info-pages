@@ -1,3 +1,4 @@
+
 from django.views import View
 from django.views.generic import FormView
 from django.http import JsonResponse, HttpResponse
@@ -7,6 +8,13 @@ import requests
 import xmltodict
 from elasticsearch import Elasticsearch
 
+class FrontPage(View):
+    template_name = 'base.html'
+
+    def get(self, request):
+        return render(request, '404.html',{})
+
+# Create your views here.
 def format_mem(m: int):
     suffix = ['B','KB','MB','GB','TB','PB']
     index = 0
