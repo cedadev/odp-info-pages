@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'info_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['info_site/templates'],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,7 +118,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # this is directory name where collectstatic files command will put your app level static files
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = '/var/www/example.com/static'
 
 import os
 # this is directory paths where you have to put your project level static files
