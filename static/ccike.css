@@ -11,7 +11,7 @@ body {
 
 @font-face {
     font-family: CCIPlain;
-    src: url("/static/fonts/thick.ttf") format("truetype");
+    src: url("/static/fonts/plain.ttf") format("truetype");
 }
 
 #app {
