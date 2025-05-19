@@ -14,9 +14,13 @@ dependencies = [
     "xmltodict (>=0.14.2,<0.15.0)",
     "requests (>=2.32.3,<3.0.0)"
 ]
+[tool.poetry]
 packages = [
+    { include = 'info_site' },
     { include = 'pages' },
-    { include = 'static' }
+]
+include = [
+    { path = "static", format = ["sdist","wheel"]}
 ]
 
 [build-system]
