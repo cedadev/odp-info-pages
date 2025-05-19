@@ -121,14 +121,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # this is directory name where collectstatic files command will put your app level static files
-STATIC_ROOT = '/var/www/static'
+STATIC_ROOT = '/var/django/staticfiles'
 
 import os
 # this is directory paths where you have to put your project level static files
 # you can put multiple folders here
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    '/var/www/static'
 )
 
 # Default primary key field type
