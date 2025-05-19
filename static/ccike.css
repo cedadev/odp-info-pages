@@ -6,12 +6,12 @@ body {
 
 @font-face {
     font-family: CCIThick;
-    src: url("http://127.0.0.1:8000/static/fonts/thick.ttf") format("truetype");
+    src: url("{{ static 'fonts/thick.ttf'}}") format("truetype");
 }
 
 @font-face {
     font-family: CCIPlain;
-    src: url("http://127.0.0.1:8000/static/fonts/plain.ttf") format("truetype");
+    src: url("{{ static 'fonts/thick.ttf'}}") format("truetype");
 }
 
 #app {
@@ -266,7 +266,7 @@ body {
 .bg-image-banner-opaque::before {
   content: ' ';
   top: -100px;
-  background-image: linear-gradient(90deg, rgba(000,174,157, 0.9) 0%, rgba(000,174,157, 0) 50%), url('~@/assets/images/default-background.jpg');
+  background-image: linear-gradient(90deg, rgba(000,174,157, 0.9) 0%, rgba(000,174,157, 0) 50%);
   opacity: 0.80;
   width: 100%;
   height: 120%;
