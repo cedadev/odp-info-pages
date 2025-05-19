@@ -12,7 +12,8 @@ dependencies = [
     "django (>=5.2.1,<6.0.0)",
     "elasticsearch (>=8,<9)",
     "xmltodict (>=0.14.2,<0.15.0)",
-    "requests (>=2.32.3,<3.0.0)"
+    "requests (>=2.32.3,<3.0.0)",
+    "whitenoise (>=6.9.0,<7.0.0)"
 ]
 [tool.poetry]
 packages = [
