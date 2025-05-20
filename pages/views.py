@@ -115,19 +115,21 @@ def get_user_guide(uuid) -> str:
     (describedbyXML, status_code) = _fetch_url(describedby_url)
     mydoc  = minidom.parseString(describedbyXML)
 
-    guide = None
+    guide, doi = None, ''
     
     onlineResources = mydoc.getElementsByTagName('gmd:CI_OnlineResource')
     for onlineResource in onlineResources:
         name = onlineResource.getElementsByTagName('gmd:name')
         name_elem = name[0].getElementsByTagName('gco:CharacterString')
         name_str = (name_elem[0].firstChild.nodeValue).lower()
+        url_elem = onlineResource.getElementsByTagName('gmd:URL')
+        url = url_elem[0].firstChild.nodeValue
         if 'product user guide' in name_str:
-            url_elem = onlineResource.getElementsByTagName('gmd:URL')
-            url = url_elem[0].firstChild.nodeValue
             guide = url
+        elif 'doi.org' in url:
+            doi = url
 
-    return guide
+    return guide, doi
     
 def get_opensearch_hit(uuid) -> dict:
     """
@@ -212,7 +214,8 @@ class BasicHTMLView(FormView):
             return render(request,"404.html")
         
         start, end, ecv = backup_info(uuid)
-        print(ecv)
+
+        guide, doi = get_user_guide(uuid)
 
         moles_resp['start_date'] = opensearch_hit.get('start_date','').split('T')[0] or start
         moles_resp['end_date']   = opensearch_hit.get('end_date','').split('T')[0] or end
@@ -230,7 +233,7 @@ class BasicHTMLView(FormView):
         moles_resp['data_lineage'] = moles_resp.pop('dataLineage',None)
         moles_resp['ecv']          = ecv
 
-        if requests.get(f'https://doi.org/10.5285/{uuid}').status_code == 200:
-            moles_resp['doi'] = f'10.5285/{uuid}'
+        moles_resp['doi']     = doi.replace('http://','').replace('https://','') or None
+        moles_resp['doi_url'] = doi or None
 
         return render(request, "base.html", moles_resp)
