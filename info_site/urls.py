@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from .views import FrontPage
+from .views import FrontPage, PrivacyRedirect
 
 urlpatterns = [
     path('', FrontPage.as_view()),
+    path('privacy/',PrivacyRedirect.as_view()),
     path('admin/', admin.site.urls),
     path('uuid/', include('pages.urls'),)
 ]
