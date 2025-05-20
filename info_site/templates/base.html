@@ -57,28 +57,6 @@
 
         <div class="esa-header__left">
 
-            <button id="esa-menu" class="esa-header__toggle">
-                <img class="esa-header__icon" src="https://climate.esa.int/static/img/ESA_Menu.c0a24aa9305e.svg"
-                    alt="ESA menu toggle">
-            </button>
-
-            <button id="esa-search" class="esa-header__toggle">
-                <img class="esa-header__icon" src="https://climate.esa.int/static/img/ESA_Search.8cd3b02e8d79.svg"
-                    alt="ESA search toggle">
-            </button>
-
-            <!-- <button id="esa-login" class="esa-header__toggle">
-                <img class="esa-header__icon" src="https://climate.esa.int/static/img/ESA_Login.55a1019d2a2d.svg" alt="ESA login toggle">
-            </button> -->
-
-
-
-            <button id="esa-language" class="esa-header__toggle">
-                <img class="esa-header__icon" src="https://climate.esa.int/static/img/ESA_Language.ff38a8b86fbb.svg"
-                    alt="ESA language toggle">
-            </button>
-
-
             <img class="esa-header__title" src="https://climate.esa.int/static/img/ESA_climate_Title.09e71bbe35b0.svg"
                 alt="ESA title">
 
@@ -95,94 +73,6 @@
 
     </section>
     <!-- End of module ----------------------------------------->
-
-
-    <form class="quick-search" action="/en/search">
-        <input id="quicksearch-i" class="quick-search__field" type="text" name="q" placeholder="Search ESA Climate">
-
-        <button class="quick-search__submit" type="submit"><i class="fas fa-arrow-right"></i></button>
-    </form>
-
-
-    <form class="quick-lang">
-        <a href="/en/data/">English</a>
-        <a href="/fr/data/">French</a>
-        <a href="/de/data/">German</a>
-        <a href="/nl/data/">Dutch</a>
-        <a href="/es/data/">Spanish</a>
-    </form>
-
-    <section id="overlay-menu">
-        <div id="overlay-menu-wrapper">
-            <!-- Left section -->
-            <div id="sidebar">
-
-                <button class="close-menu"><i class="fas fa-times"></i></button>
-                <div id="sidebar-nav">
-
-                    <a class="menu-item menu-item--home " href="/en/"><i class="fas fa-home"></i>CCI Home</a>
-
-
-
-
-
-
-
-
-
-
-                    <a class="menu-item " href="/en/about-us-new/climate-change-initiative/">Climate Change
-                        Initiative</a>
-
-                    <a class="menu-item " href="/en/news-events/">News</a>
-
-                    <a class="menu-item " href="/en/Scientific-highlights/">Highlights</a>
-
-                    <a class="menu-item " href="/en/projects/">ECV Projects</a>
-
-                    <a class="menu-item " href="/en/Cross_ECV_Projects/">Cross-ECV Projects</a>
-
-                    <a class="menu-item " href="/en/supporting-the-paris-agreement/">Paris Agreement Support</a>
-
-                    <a class="menu-item " href="/en/tipping-points-research/">Tipping Elements Projects</a>
-
-                    <a class="menu-item active" href="/en/data/">Data</a>
-
-                    <a class="menu-item " href="/en/education/">Training</a>
-
-                    <a class="menu-item " href="/en/about-us-new/">About Us</a>
-
-                    <a class="menu-item " href="https://cfs.climate.esa.int">Explore</a>
-
-                    <a class="menu-item " href="/en/about-us-new/climate-change-initiative/procurement/">Procurement</a>
-
-                    <a class="menu-item " href="/en/contact-us/">Contact us</a>
-
-
-
-
-
-                </div>
-                <div class="social-media-links">
-                    <a href="https://www.youtube.com/user/ESA" target="_blank"><i class="fab fa-youtube"></i></a>
-                    <a href="https://twitter.com/esa" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.facebook.com/EuropeanSpaceAgency" target="_blank"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/europeanspaceagency/" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <!-- /Left section -->
-            <!-- Left section -->
-            <div id="menu-content">
-
-            </div>
-            <!-- Content -->
-        </div>
-
-        /en/
-
-    </section>
 
     <!-- HEADER NAVIGATION -->
 
@@ -219,10 +109,20 @@
                         <div class="ccike-dataset-info-item hv-borders"><span
                                 class="ccike-dataset-info-item-key" style="font-family: CCIThick">Number of files: </span> <span
                                 class="ccike-dataset-info-item-value" style="font-family: CCIThick">{{ num_files }}</span></div>
-                        <div class="ccike-dataset-info-item"><span class="ccike-dataset-info-item-key" style="font-family: CCIThick">Date
+                        
+                        <div class="ccike-dataset-info-item">
+                            {% if start_date %}
+                            <span class="ccike-dataset-info-item-key" style="font-family: CCIThick">Date
                                 time range: </span> <span class="ccike-dataset-info-item-value"  style="font-family: CCIThick">
                                     {{ start_date }} -
                                 {{end_date}}</span>
+                            {% endif %}
+                        </div>
+                        <div class="ccike-dataset-info-item">
+                            {% if doi %}
+                            <a href="{{ doi_url }}/"><span style="font-family: CCIThick; color: #52A89B;">DOI: </span></a>
+                            <span style="font-family: CCIThick;">{{ doi }} </span>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -271,6 +171,7 @@
             </div>
             <!-- Data Download -->
             <div class="ccike-project-info-options ccike-project-info-options-links">
+                {% if download %}
                 <div class="mb-1 ccike-flex" style="margin-left: 10px;">
                     <a href={{ download }} target="_blank" class="ml-2 ccike-search-href NotesEsa-H6" style="font-family: CCIThick">Data Download
                         <span style="float: right; margin-left: 10px;">
@@ -281,9 +182,11 @@
                         </span>
                     </a>
                 </div>
+                {% endif %}
             </div>
             <!-- FTP Download -->
             <div class="ccike-project-info-options ccike-project-info-options-links">
+                {% if ftp_download %}
                 <div class="mb-1 ccike-flex" style="margin-left: 10px;">
                     <a href={{ ftp_download }} target="_blank" class="ml-2 ccike-search-href NotesEsa-H6" style="font-family: CCIThick">FTP-Download
                         <span style="float: right; margin-left: 10px;">
@@ -294,6 +197,7 @@
                         </span>
                     </a>
                 </div>
+                {% endif %}
             </div>
         </div>
         <!-- Info Text -->
