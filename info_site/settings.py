@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'info_site',
     'pages',
-    'static',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,13 +120,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # this is directory name where collectstatic files command will put your app level static files
-STATIC_ROOT = '/var/django/staticfiles'
+STATIC_ROOT = 'staticfiles'
 
 import os
 # this is directory paths where you have to put your project level static files
 # you can put multiple folders here
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    #os.path.join(BASE_DIR, "static"),
 )
 
 # Default primary key field type
