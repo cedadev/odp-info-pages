@@ -12,6 +12,7 @@ from requests.exceptions import RetryError
 from urllib3.util import Retry
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
+import os
 
 class FrontPage(View):
     template_name = 'base.html'
@@ -227,13 +228,13 @@ class BasicHTMLView(FormView):
         # Data Lineage - esa_desc
         moles_resp['related_docs'] = moles_resp['catalog_link'] + '/?jump=related-docs-anchor'
         if opensearch_hit.get('path',False):
-            moles_resp['download']     = 'https://data.cci.ceda.ac.uk' + opensearch_hit.get('path')
+            moles_resp['download']     = os.path.join('https://data.cci.ceda.ac.uk/thredds/catalog',opensearch_hit.get('path').replace('/neodc/',''),'catalog.html')
             moles_resp['ftp_download'] = 'ftp://anon-ftp.ceda.ac.uk' + opensearch_hit.get('path')
-        moles_resp['user_guide']   = get_user_guide(uuid)
+        moles_resp['user_guide']   = guide
         moles_resp['data_lineage'] = moles_resp.pop('dataLineage',None)
         moles_resp['ecv']          = ecv
 
-        moles_resp['doi']     = doi.replace('http://','').replace('https://','') or None
-        moles_resp['doi_url'] = doi or None
+        #moles_resp['doi']     = doi.replace('http://','').replace('https://','') or None
+        #moles_resp['doi_url'] = doi or None
 
         return render(request, "base.html", moles_resp)

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/cedadev/odp-info-pages/refs/heads/main/static/ccike.css">
-<link rel="shortcut icon" type="image/png" href="https://raw.githubusercontent.com/cedadev/odp-info-pages/refs/heads/main/static/favicon.ico" >
+<link rel="stylesheet" type="text/css" href="{% static 'ccike.css' %}">
+<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}" >
 <html class="no-js" lang="en" data-addthis-enabled="true" data-is-preview="" data-matomo-enabled="true"
     data-matomo-url="https://matomo-ext.esa.int/" data-matomo-site-id="4">
 <!-- 4.13.5-35 -->
@@ -212,6 +212,13 @@
                 </span>
             </div>
         </div>
+        </div>
+        <div>
+            <div class="ccike-project-info-options">
+                <span style="font-family: CCIPlain;">
+                    <span><a style="font-family: CCIThick; color: #52A89B;" href='https://climate.esa.int/data'>Go to CCI Open Data Portal</a></span>
+                </span>
+            </div>
         </div>
     </main>
 
