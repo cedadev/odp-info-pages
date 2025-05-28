@@ -6,12 +6,12 @@ body {
 
 @font-face {
     font-family: CCIThick;
-    src: url("/static/fonts/thick.ttf") format("truetype");
+    src: url("https://github.com/cedadev/odp-info-pages/raw/refs/heads/main/static/fonts/thick.ttf") format("truetype");
 }
 
 @font-face {
     font-family: CCIPlain;
-    src: url("/static/fonts/plain.ttf") format("truetype");
+    src: url("https://github.com/cedadev/odp-info-pages/raw/refs/heads/main/static/fonts/plain.ttf") format("truetype");
 }
 
 #app {
