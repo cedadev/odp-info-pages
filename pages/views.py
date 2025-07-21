@@ -3,6 +3,7 @@ from django.views import View
 from django.views.generic import FormView
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
+from django.conf import settings
 
 import requests
 import xmltodict
@@ -13,12 +14,6 @@ from urllib3.util import Retry
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
 import os
-
-class FrontPage(View):
-    template_name = 'base.html'
-
-    def get(self, request):
-        return render(request, '404.html',{})
 
 # Create your views here.
 def format_mem(m: int):
@@ -45,7 +40,7 @@ class FrontPage(View):
     template_name = 'base.html'
 
     def get(self, request):
-        return render(request, '404.html',{})
+        return render(request, '404.html',settings.DEFAULT_SHEETS)
 
 
 class BasicJSONView(View):
@@ -237,4 +232,4 @@ class BasicHTMLView(FormView):
         #moles_resp['doi']     = doi.replace('http://','').replace('https://','') or None
         #moles_resp['doi_url'] = doi or None
 
-        return render(request, "base.html", moles_resp)
+        return render(request, "base.html", moles_resp | settings.DEFAULT_SHEETS)
