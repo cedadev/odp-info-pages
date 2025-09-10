@@ -124,33 +124,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "..","static"),
 )
 
-REGEX="[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]"
-
-def get_links() -> dict:
-
-    link_opts = {
-        "LOWPRIO_CSS":"\/static\/dist\/ccikewebsite-lowprio-{}\.css",
-        "LOWPRIO_JS":"\/static\/dist\/ccikewebsite-lowprio-{}\.bundle\.js",
-        "INFOPAGE":"\/static\/dist\/ccikewebsite-infopage-{}\.bundle\.js",
-        "ODPNAV_JS":"\/static\/dist\/ccikewebsite-odpnav-{}\.bundle\.js",
-        "ODPNAV_CSS":"\/static\/dist\/ccikewebsite-odpnav-{}\.css",
-        "COMMON_JS":"\/static\/dist\/ccikewebsite-common-{}\.bundle\.js",
-        "COMMON_CSS":"\/static\/dist\/ccikewebsite-common-{}\.css"
-    }
-
-    link_url = 'https://climate.esa.int/en/data/#/dashboard'
-    content = requests.get(link_url).text
-
-    newlinks = {}
-    for title, lnk in link_opts.items():
-        link = lnk.format(REGEX)
-
-        src = re.compile(link)
-        newlinks[title] = "https://climate.esa.int/" + src.search(content).group(0)
-    return newlinks
-
-DEFAULT_SHEETS = get_links()
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

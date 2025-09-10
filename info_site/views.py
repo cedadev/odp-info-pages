@@ -13,7 +13,7 @@ class FrontPage(View):
     template_name = 'base.html'
 
     def get(self, request):
-        return render(request, '404.html',settings.DEFAULT_SHEETS)
+        return render(request, '404.html',{})
 
 class PrivacyRedirect(View):
 

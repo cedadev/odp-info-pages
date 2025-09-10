@@ -40,7 +40,7 @@ class FrontPage(View):
     template_name = 'base.html'
 
     def get(self, request):
-        return render(request, '404.html',settings.DEFAULT_SHEETS)
+        return render(request, '404.html', {})
 
 
 class BasicJSONView(View):
@@ -232,4 +232,4 @@ class BasicHTMLView(FormView):
         #moles_resp['doi']     = doi.replace('http://','').replace('https://','') or None
         #moles_resp['doi_url'] = doi or None
 
-        return render(request, "base.html", moles_resp | settings.DEFAULT_SHEETS)
+        return render(request, "base.html", moles_resp)
