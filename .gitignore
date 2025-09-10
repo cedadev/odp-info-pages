@@ -1,0 +1,4 @@
+*.pyc
+**/*.pyc
+info_site/settings_local.py
+*.sqlite3

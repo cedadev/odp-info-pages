@@ -121,7 +121,7 @@ import os
 # this is directory paths where you have to put your project level static files
 # you can put multiple folders here
 STATICFILES_DIRS = (
-    #os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "..","static"),
 )
 
 REGEX="[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]"
