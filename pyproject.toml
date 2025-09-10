@@ -1,6 +1,6 @@
 [project]
 name = "info-site"
-version = "0.1.0"
+version = "0.4.0"
 description = "Open Data Portal Info Pages - Frontend ESA-branded info page for displaying collated Moles and Opensearch metadata."
 authors = [
     {name = "Daniel Westwood",email = "daniel.westwood@stfc.ac.uk"}
