@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+import requests
+import re
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent
@@ -20,14 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-!m&wo@i+!q#86g&#lx@moi7rfxnpw@%21-_@@f0r-ny=vi!_0f'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -129,7 +124,39 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "..","static"),
 )
 
+REGEX="[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9]"
+
+def get_links() -> dict:
+
+    link_opts = {
+        "LOWPRIO_CSS":"\/static\/dist\/ccikewebsite-lowprio-{}\.css",
+        "LOWPRIO_JS":"\/static\/dist\/ccikewebsite-lowprio-{}\.bundle\.js",
+        "INFOPAGE":"\/static\/dist\/ccikewebsite-infopage-{}\.bundle\.js",
+        "ODPNAV_JS":"\/static\/dist\/ccikewebsite-odpnav-{}\.bundle\.js",
+        "ODPNAV_CSS":"\/static\/dist\/ccikewebsite-odpnav-{}\.css",
+        "COMMON_JS":"\/static\/dist\/ccikewebsite-common-{}\.bundle\.js",
+        "COMMON_CSS":"\/static\/dist\/ccikewebsite-common-{}\.css"
+    }
+
+    link_url = 'https://climate.esa.int/en/data/#/dashboard'
+    content = requests.get(link_url).text
+
+    newlinks = {}
+    for title, lnk in link_opts.items():
+        link = lnk.format(REGEX)
+
+        src = re.compile(link)
+        newlinks[title] = "https://climate.esa.int/" + src.search(content).group(0)
+    return newlinks
+
+DEFAULT_SHEETS = get_links()
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from .settings_local import *
+except:
+    pass
