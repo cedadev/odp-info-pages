@@ -129,6 +129,10 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+ELASTICSEARCH_HOSTS = os.environ.get("ES_HOSTS") or 'https://elasticsearch.ceda.ac.uk'
+ES_API_KEY = os.environ.get("ES_API_KEY") or None
+ELASTICSEARCH_CONNECTION_PARAMS = {}
+
 try:
     from .settings_local import *
 except:
