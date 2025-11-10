@@ -15,6 +15,8 @@ from xml.dom import minidom
 import xml.etree.ElementTree as ET
 import os
 
+from cci_tag_scanner.utils.elasticsearch import es_connection_kwargs
+
 # Create your views here.
 def format_mem(m: int):
     suffix = ['B','KB','MB','GB','TB','PB']
@@ -131,7 +133,12 @@ def get_opensearch_hit(uuid) -> dict:
     """
     Query elasticsearch for the opensearch collections metadata
     """
-    cli = Elasticsearch(hosts=['https://elasticsearch.ceda.ac.uk'])
+    cli = Elasticsearch(
+        **es_connection_kwargs(
+                hosts=settings.ELASTICSEARCH_HOSTS,
+                api_key=settings.ES_API_KEY,
+                **settings.ELASTICSEARCH_CONNECTION_PARAMS
+            ))
 
     opensearch_resp = cli.search(
         index='opensearch-collections',
