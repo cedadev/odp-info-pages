@@ -22,6 +22,5 @@ from .views import FrontPage, PrivacyRedirect
 urlpatterns = [
     path('', FrontPage.as_view()),
     path('privacy/',PrivacyRedirect.as_view()),
-    path('admin/', admin.site.urls),
     path('uuid/', include('pages.urls'),)
 ]
