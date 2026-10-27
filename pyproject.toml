@@ -7,14 +7,14 @@ authors = [
 ]
 license = {text = "BSD 3"}
 readme = "README.md"
-requires-python = ">=3.11,<4"
+requires-python = ">=3.12,<4"
 dependencies = [
-    "django (>=5.2.8,<6.0.0)",
+    "django (>=5.2.17,<6.0.0)",
     "elasticsearch (>=8,<9)",
     "xmltodict (>=0.14.2,<0.15.0)",
     "requests (>=2.32.3,<3.0.0)",
     "whitenoise (>=6.9.0,<7.0.0)",
-    "cci-tag-scanner (>=2.6.0,<3.0.0)"
+    "cci-facet-scanner (>=0.8.8,<1.0.0)"
 ]
 [tool.poetry]
 packages = [

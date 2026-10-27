@@ -6,7 +6,6 @@ from django.shortcuts import render
 from django.conf import settings
 
 import requests
-import xmltodict
 from elasticsearch import Elasticsearch
 from requests.adapters import HTTPAdapter
 from requests.exceptions import RetryError
@@ -15,7 +14,7 @@ from xml.dom import minidom
 import xml.etree.ElementTree as ET
 import os
 
-from cci_tag_scanner.utils.elasticsearch import es_connection_kwargs
+from cci_facet_scanner.utils.elasticsearch import es_connection_kwargs
 
 # Create your views here.
 def format_mem(m: int):
