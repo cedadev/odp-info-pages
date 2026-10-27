@@ -14,7 +14,8 @@ dependencies = [
     "xmltodict (>=0.14.2,<0.15.0)",
     "requests (>=2.32.3,<3.0.0)",
     "whitenoise (>=6.9.0,<7.0.0)",
-    "cci-facet-scanner (>=0.8.8,<1.0.0)"
+    "cci-facet-scanner (>=0.8.8,<1.0.0)",
+    "django-flexi-settings @ git+https://github.com/cedadev/django-flexi-settings.git@0.2.0"
 ]
 [tool.poetry]
 packages = [
