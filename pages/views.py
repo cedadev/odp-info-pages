@@ -49,7 +49,7 @@ class BasicJSONView(View):
     def get(self, request, uuid):
         print(uuid)
         return JsonResponse(
-            requests.get(f'https://catalogue.ceda.ac.uk/api/v2/observations.json?uuid={uuid}').json()
+            requests.get(f'{settings.MOLES_API_URL}?uuid={uuid}').json()
         )
     
 def _fetch_url(_url):
@@ -66,7 +66,7 @@ def _fetch_url(_url):
         allowed_methods=["GET"]
     )
 
-    opensearch_url = 'https://opensearch-test.ceda.ac.uk/opensearch/description.xml'
+    opensearch_url = f'{settings.OPENSEARCH_URL}/opensearch/description.xml'
 
     result, response, error = None, None, False
     opensearch_adapter = HTTPAdapter(max_retries=retries)
@@ -204,7 +204,7 @@ class BasicHTMLView(FormView):
         """
         Fill context for the GET request"""
 
-        resp = requests.get(f'https://catalogue.ceda.ac.uk/api/v2/observations.json?uuid={uuid}')
+        resp = requests.get(f'{settings.MOLES_API_URL}?uuid={uuid}')
         try:
             moles_resp = resp.json()['results'][0]
         except IndexError:

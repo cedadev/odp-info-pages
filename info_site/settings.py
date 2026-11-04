@@ -129,6 +129,9 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+MOLES_API_URL = "https://catalogue.ceda.ac.uk/api/v3/observations.json"
+OPENSEARCH_URL = "https://archive.opensearch.ceda.ac.uk"
+
 ELASTICSEARCH_HOSTS = os.environ.get("ES_HOSTS") or 'https://elasticsearch.ceda.ac.uk'
 ES_API_KEY = os.environ.get("ES_API_KEY") or None
 ELASTICSEARCH_CONNECTION_PARAMS = {}
